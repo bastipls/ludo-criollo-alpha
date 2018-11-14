@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link href="https://file.myfontastic.com/Zu2x3YbfXDnDmKv8Pz87YG/icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/entry.css' %}">
+    <title>Ingresar alumno</title>
+    
+</head>
+<body>
+    <div class="menu-container">
+        <a id="icon-ref" href="{% url 'inicio' %}"><label class="icon-heartbeat"></label></a>
+        <label id="btn-menu" class="icon-list-bullet"></label>
+        <nav id="navegador">
+            <ul>
+                <li  class="selected"><a class="item-link" href="{% url 'ingreso_profe' %}">Ingresar alumno</a></li>
+                <li><a class="item-link" href="{% url 'listar_alumnos_profe' %}">Buscar alumnos</a></li>
+
+            </ul>
+        </nav>
+    </div>
+<div class="general-container">
+    
+    
+<form method="post"  onsubmit="return validarForm();">{% csrf_token %}
+<h1>Ingresar alumnos:</h1>
+<div class="item-fullname">
+<div class="item-input">
+    <div class="item-input-input"    >
+        <label for="txtname">Nombres: </label>
+        <input type="text" id="txtname"  name="txtname" placeholder="Ingrese nombres" required>
+    </div>
+</div>
+<div class="item-input">
+    <div class="item-input-input">
+        <label for="txtlastname">Apellidos:</label>
+        <input type="text" id="txtlastname" name="txtlastname" placeholder="Ingrese apellidos" required>
+    </div>
+</div>
+<div class="item-input">
+    <div class="item-input-input">
+        <label for="txtselectgrade" >Curso:</label>
+        <input type="text"  id="txtselectgrade" name="txtselectgrade" list="selectgrade" placeholder="Elegir Curso" required>
+        <datalist id="selectgrade">
+            {% for cursos in todos_cursos %}
+            <option >{{ cursos.todos_curso }}</option>
+            {% endfor %}
+
+        </datalist>
+    </div>
+</div>
+</div>
+<div class="item-age-height">
+<div class="item-input">
+    <div class="item-input-input">
+        <label for="txtage">Edad:</label>
+        <input type="number" id="txtage" name="txtage" placeholder="Ingrese edad" required>
+    </div>
+</div>
+<div class="item-input">
+    <div class="item-input-input">
+        <label for="txtweight">Ingrese peso (kg):</label>
+        <input type="number" id="txtweight" name="txtweight"  min="0" max="300" placeholder="Ingrese peso" required>
+    </div>
+</div>
+<div class="item-input">
+    <div class="item-input-input">
+        <label for="txttalla">Ingrese talla(cm):</label>
+        <input type="number" id="txttalla" name="txttalla" placeholder="Ingrese talla" required>
+    </div>
+</div>
+</div>
+<div class="item-meter-min-cant">
+<div class="item-input">
+    <div class="item-input-input">
+        <label for="txtperimeter">Perimetro Cintura (cm):</label>
+        <input type="number" id="txtperimeter" name="txtperimeter" min="0" max="300" placeholder="Ingrese perimetro" required>
+    </div>
+</div>
+<div class="item-input">
+    <div class="item-input-input">
+        <label for="txtfpizquierda"> Fuerza prensil izquierda(kg):</label>
+        <input id="txtfpizquierda" type="number" name="txtfpizquierda" placeholder="Ingrese fuerza" required>
+    </div>
+</div>
+<div class="item-input">
+    <div class="item-input-input">
+        <label for="txtfpderecha"> Fuerza prensil derecha(kg):</label>
+        <input id="txtfpderecha" type="number" name="txtfpderecha" placeholder="Ingrese fuerza" required>
+    </div>
+</div>
+</div>
+<div class="item-input">
+    <div class="item-input-input">
+        <button type="submit" >Ingresar datos</button>
+    </div>
+</div>
+</form>
+</div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/javaingress.js' %}"></script>
+    <script src="{% static 'js/javamenu.js' %}"></script>    
+</body>
+</html>

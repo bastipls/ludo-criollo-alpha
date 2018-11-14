@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar alumnos</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/listStudents.css' %}">
+    <link href="https://file.myfontastic.com/Zu2x3YbfXDnDmKv8Pz87YG/icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu-container">
+        <a id="icon-ref" href="{% url 'inicio' %}"><label class="icon-heartbeat"></label></a>
+        <label id="btn-menu" class="icon-list-bullet"></label>
+        <nav id="navegador">
+            <ul>
+                    <li ><a class="item-link" href="{% url 'ingreso_profe' %}">Ingresar alumno</a></li>
+                    <li class="selected"><a class="item-link" href="{% url 'listar_alumnos_profe' %}">Buscar alumnos</a></li>
+    
+            </ul>
+        </nav>
+    </div>
+    <div class="general-container">
+        <div class="item-list-button">
+            <h2>Listar todos los alumnos</h2>
+
+        </div>
+        <div id="insert" class="container-list">
+            <!--  <div class="table-container">
+                <table class="table-student">
+                    <tr>
+
+                        <th>RUT:</th>
+                        <th>Nombre</th>
+                        <th>Curso</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Altura</th>
+                        <th>Peso</th>
+                        <th>Talla</th>
+                        <th>Cintura</th>
+                        <th>Cadera</th>
+                    </tr>
+                    <tr>
+                        <td>20057170-3</td>
+                        <td>Bastian</td>
+                        <td>2°A</td>
+                        <td>22-11-2018</td>
+                        <td>1.75</td>
+                        <td>70</td>
+                        <td>80</td>
+                        <td>90</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>20057170-3</td>
+                        <td>Bastian</td>
+                        <td>2°A</td>
+                        <td>22-11-2018</td>
+                        <td>1.75</td>
+                        <td>70</td>
+                        <td>80</td>
+                        <td>90</td>
+                        <td>30</td>
+                    </tr>
+             
+                
+                </table>
+            </div>-->
+
+
+            {% for alumno in todos_alumnos %}
+            <div class="item-list">
+                    <div class="item-list-name">
+                            <a href="{% url 'detalle_alumno_profe' pk=alumno.pk %}" id="ref-info"> <span class="icon-info-circle"></span></a> 
+                              <p id="name">{{ alumno.nombres_alumno }}</p>
+                              <p>{{ alumno.apellidos_alumno }}</p>
+                          </div>
+                <div class="item-list-info">
+                    <div class="item-list-data">Edad(años):</div>
+                    <div class="item-list-data">
+                        <p id="rut">{{ alumno.edad_alumno }} </p> 
+                    </div>
+                    <div class="item-list-data">Altura(cm):</div>
+                    <div class="item-list-data">
+                        <p id="height">{{ alumno.talla_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Peso(kg):</div>
+                    <div class="item-list-data">
+                        <p id="weight">{{ alumno.peso_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Categorizacion IMC:</div>
+                    <div class="item-list-data">
+                        <p id="category">{{ alumno.categoria_imc_alumno }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+         
+
+
+
+        </div>
+    </div>
+    <!--     <script src="js/javalistsStudents.js"></script> -->
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>

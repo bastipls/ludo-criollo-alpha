@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle alumno</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/studentDetail.css' %}">
+    <link href="https://file.myfontastic.com/Zu2x3YbfXDnDmKv8Pz87YG/icons.css" rel="stylesheet">
+</head>
+
+<body>
+        <div class="menu-container">
+                <a id="icon-ref" href="{% url 'inicio' %}"><label class="icon-heartbeat"></label></a>
+                <label id="btn-menu" class="icon-list-bullet"></label>
+                <nav id="navegador">
+                    <ul>
+                            <li ><a class="item-link" href="{% url 'ingreso_profe' %}">Ingresar alumno</a></li>
+                            <li class="selected"><a class="item-link" href="{% url 'listar_alumnos_profe' %}">Buscar alumnos</a></li>
+            
+                    </ul>
+                </nav>
+            </div>
+    </div>
+    <div class="general-container">
+
+        <div id="insert" class="container-list">
+            <!--  <div class="table-container">
+                <table class="table-student">
+                    <tr>
+
+                        <th>RUT:</th>
+                        <th>Nombre</th>
+                        <th>Curso</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Altura</th>
+                        <th>Peso</th>
+                        <th>Talla</th>
+                        <th>Cintura</th>
+                        <th>Cadera</th>
+                    </tr>
+                    <tr>
+                        <td>20057170-3</td>
+                        <td>Bastian</td>
+                        <td>2°A</td>
+                        <td>22-11-2018</td>
+                        <td>1.75</td>
+                        <td>70</td>
+                        <td>80</td>
+                        <td>90</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>20057170-3</td>
+                        <td>Bastian</td>
+                        <td>2°A</td>
+                        <td>22-11-2018</td>
+                        <td>1.75</td>
+                        <td>70</td>
+                        <td>80</td>
+                        <td>90</td>
+                        <td>30</td>
+                    </tr>
+             
+                
+                </table>
+            </div>-->
+
+            <h1 id="title-detail">Datos alumno:</h1>
+            {% if alumno.nombres_alumno %}
+            <div class="item-list">
+                <div class="item-list-name">
+                    {% if user.is_authenticated %}
+                   <a href="{% url 'modificar_profe' pk=alumno.pk %}"> <span class="icon-pencil-square-o"></span></a>
+                    {% endif %}
+                    <p id="name">{{ alumno.nombres_alumno }} </p>
+                    <p> {{ alumno.apellidos_alumno }}</p>
+                </div>
+                <div class="item-list-info">
+
+                    <div class="item-list-data">Edad(años):</div>
+                    <div class="item-list-data">
+                        <p id="rut">{{ alumno.edad_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Curso:</div>
+                    <div class="item-list-data">
+                        <p id="grade">{{ alumno.curso_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Peso(kg):</div>
+                    <div class="item-list-data">
+                        <p id="weight">{{ alumno.peso_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Altura(cm):</div>
+                    <div class="item-list-data">
+                        <p id="height">{{ alumno.talla_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Perimetro cintura(cm):</div>
+                    <div class="item-list-data">
+                        <p id="perimeter">{{ alumno.perimetro_cintura_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Fuerza prensil izquierda(kg):</div>
+                    <div class="item-list-data">
+                        <p id="fpleft">{{ alumno.fuerza_prensil_izquierda_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Fuerza prensil derecha(kg):</div>
+                    <div class="item-list-data">
+                        <p id="fpright">{{ alumno.fuerza_prensil_derecha_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">IMC:</div>
+                    <div class="item-list-data">
+                        <p id="imc">{{ alumno.imc_alumno }}</p>
+                    </div>
+                    <div class="item-list-data">Categorizacion IMC:</div>
+                    <div class="item-list-data">
+                        <p id="size">{{ alumno.categoria_imc_alumno }}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
+
+
+
+
+        </div>
+    </div>
+    <!--     <script src="js/javalistsStudents.js"></script> -->
+    <script src="{% static 'js/javamenu.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/start.css' %}">
+    <link href="https://file.myfontastic.com/Zu2x3YbfXDnDmKv8Pz87YG/icons.css" rel="stylesheet">
+    <title>Ludo Criollo</title>
+</head>
+
+<body>
+    <div class="general-container">
+        <div class="item-alert">
+            <div id="alert">
+                <span class="closebtn" onclick="this.parentElement.style.transform='scale(.0)';">&times;</span>
+            Ingrese un usuario existente
+            </div>
+        </div>
+        <div id="item_login" class="item-login">
+            <div class="item-login-icon">
+                <label for="txtuser" class="icon-user"></label>
+            </div>
+            <div class="item-input-input">
+                <h2>Iniciar Sesión</h2>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtuser" class="icon-user"></label>
+                    <input id="txtuser" type="text" required placeholder="Usuario">
+                </div>
+
+                <div class="item-input-input">
+                    <label for="txtpass" class="icon-unlock-alt"></label>
+                    <input id="txtpass" type="password" required placeholder="***********">
+                </div>
+                <div class="item-input-input">
+                    <input id="checkuser" type="checkbox">
+                    <label for="checkuser"> Recordar usuario</label>
+                </div>
+                <button onclick="redirect()"> Login</button>
+                <a href="#">¿Olvido su contraseña?</a>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/javalogin.js' %}"></script>
+</body>
+
+</html>

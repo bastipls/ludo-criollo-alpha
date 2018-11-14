@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modifyStudent.css' %}">
+    <link href="https://file.myfontastic.com/Zu2x3YbfXDnDmKv8Pz87YG/icons.css" rel="stylesheet">
+    <title>Modificar alumno</title>
+
+</head>
+
+<body>
+    <div id="item-alert">
+
+    </div>
+    <div class="menu-container">
+            <a id="icon-ref" href="{% url 'inicio' %}"><label class="icon-heartbeat"></label></a>
+            <label id="btn-menu" class="icon-list-bullet"></label>
+            <nav id="navegador">
+                <ul>
+                        <li ><a class="item-link" href="{% url 'ingreso_profe' %}">Ingresar alumno</a></li>
+                        <li class="selected"><a class="item-link" href="{% url 'listar_alumnos_profe' %}">Buscar alumnos</a></li>
+        
+                </ul>
+            </nav>
+        </div>
+</div>
+    <div class="general-container">
+        <form  onsubmit=" return searchModify();" class="item-search">{% csrf_token %}
+            <label>Modificar Alumno:</label>
+        </form>
+        <form method="POST" onSubmit="reutrn modify()" class="item-data">
+            <label id="user" class="icon-user"></label>
+            <div class="item-data-title">
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="selectgrade">Curso: <span id="edit-grade" class="icon-pencil-square-o"></label>
+                    <input type="text"  id="txtselectgrade" value="{{ curso_alumno }}" name="txtselectgrade" list="selectgrade" placeholder="Elegir Curso" required>
+                    <datalist id="selectgrade">
+                        {% for cursos in todos_cursos %}
+                        <option >{{ cursos.todos_curso }}</option>
+                        {% endfor %}
+            
+                    </datalist>
+                </div>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtname"> Nombre: <span id="edit-name" class="icon-pencil-square-o"></label>
+                    <input type="text" id="txtname" value="{{ nombres_alumno }}" placeholder="Ingrese nombres" disabled>
+                </div>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtlastname"> Apellidos: <span  id="edit-lastname" class="icon-pencil-square-o"></label>
+                    <input type="text" id="txtlastname" value="{{ apellidos_alumno }}" placeholder="Ingrese apellidos" disabled>
+                </div>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtage"> Edad (años): <span  id="edit-age" class="icon-pencil-square-o"></label>
+                    <input type="number" id="txtage" value="{{ edad_alumno }}" placeholder="Ingrese peso" disabled>
+                </div>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtweight"> Peso (kg): <span  id="edit-weight" class="icon-pencil-square-o"></label>
+                    <input type="number" id="txtweight" value="{{ peso_alumno }}" placeholder="Ingrese peso" disabled>
+                </div>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txttalla">Talla (cm): <span  id="edit-talla" class="icon-pencil-square-o"></label>
+                    <input type="text" id="txttalla" value="{{ talla_alumno }}" placeholder="Ingrese talla" disabled>
+                </div>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtperimeter">Perimetro cintura (cm): <span id="edit-perimeter"  class="icon-pencil-square-o"></label>
+                    <input type="number" id="txtperimeter" value="{{ perimetro_cintura_alumno }}" placeholder="Ingrese perimetro" disabled>
+                </div>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtfpizquierda"> Fuerza prensil izquierda(kg): <span id="edit-fp-left"  class="icon-pencil-square-o"></label>
+                    <input type="number" id="txtfpizquierda" value="{{ fuerza_prensil_izquierda_alumno }}" placeholder="Ingrese fuerza" disabled >
+                </div>
+            </div>
+            <div class="item-input">
+                <div class="item-input-input">
+                    <label for="txtfpderecha"> Fuerza prensil derecha(kg): <span  id="edit-fp-right" class="icon-pencil-square-o"></span></label>
+                    
+                    <input type="number" id="txtfpderecha" value="{{ fuerza_prensil_derecha_alumno }}" placeholder="Ingrese fuerza"  disabled >
+                </div>
+            </div>
+            
+
+            <div class="item-input">
+                <div class="item-input-input">
+                    <button value="OK" type="submit">Modificar</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <script src="{% static 'js/javamodify.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{%static 'js/javamenu.js' %}"></script>
+
+</body>
+
+
+</html>
