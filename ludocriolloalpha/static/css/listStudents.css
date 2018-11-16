@@ -21,6 +21,16 @@
     background: rgba(0, 0, 0, .5);
     color: rgba(255, 255, 255, .8);
 }
+.item-list-button input{
+    border-radius: 15px;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    outline: none;
+    height: 30px;
+    width: 70%;
+    padding:3px;
+    text-align: center;
+}
 
 .item-list-button h2 {
     font-size: 60px
@@ -227,7 +237,9 @@ td:nth-child(2) {
         margin: 10px;
 
     }
-
+    .item-list-button input{
+        width: 50%;
+    }
 
 }
 
@@ -236,7 +248,9 @@ td:nth-child(2) {
         justify-content: center;
 
     }
-
+    .item-list-button input{
+        width: 30%;
+    }
     .item-list {
         width: 24%;
         margin-right: 5px;

@@ -147,18 +147,28 @@
     color: rgba(255, 255, 255, .6);
 }
 
+#txtuser{
+    position: relative;
+}
+#error-login{
+    position:absolute;
+    bottom: 270px;
+    padding: 6px;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
 /*AQUI EMPIEZA LO DE ALERT*/
 /* The alert message box */
-.item-alert {
+/* .item-alert {
     position: absolute;
     top: 6px;
     z-index: 100;
-}
+} */
 
-#alert {
+/* #alert {
     padding: 16px;
     background-color: rgba(244, 67, 54);
-    /* Red */
     color: white;
     border: 2px solid #b5736e;
     border-radius: 15px;
@@ -167,10 +177,10 @@
     transform: scale(.0);
 
 
-}
+} */
 
 /* The close button */
-.closebtn {
+/* .closebtn {
     margin-left: 15px;
     color: white;
     font-weight: bold;
@@ -179,9 +189,9 @@
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
-}
+} */
 
 /* When moving the mouse over the close button */
-.closebtn:hover {
+/* .closebtn:hover {
     color: black;
-}
+} */

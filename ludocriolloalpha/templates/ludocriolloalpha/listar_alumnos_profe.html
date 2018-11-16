@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar alumnos</title>
+    <link rel="icon" href="{% static 'img/iconludo.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/listStudents.css' %}">
@@ -14,21 +15,31 @@
 
 <body>
     <div class="menu-container">
-        <a id="icon-ref" href="{% url 'inicio' %}"><label class="icon-heartbeat"></label></a>
+        <a id="icon-ref" href="{% url 'login' %}"><label class="icon-heartbeat"></label></a>
         <label id="btn-menu" class="icon-list-bullet"></label>
         <nav id="navegador">
             <ul>
                     <li ><a class="item-link" href="{% url 'ingreso_profe' %}">Ingresar alumno</a></li>
                     <li class="selected"><a class="item-link" href="{% url 'listar_alumnos_profe' %}">Buscar alumnos</a></li>
-    
+                    {% if user.is_authenticated %}
+                    <li>
+                    <form  action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <!-- <button class="item-link"  type="submit">Cerrar Sesion</button> -->
+                            <input class="item-link" type="submit" value="Cerrar Sesion">
+                    </form>
+                    </li>
+                    {% endif %} 
             </ul>
         </nav>
     </div>
     <div class="general-container">
-        <div class="item-list-button">
-            <h2>Listar todos los alumnos</h2>
+        <form method="GET" action="" class="item-list-button">
+            <h2>Lista de alumnos</h2>
+            <input name="q" type="search" value="{{ request.GET.q }}" placeholder="Ingrese nombre o curso">
+            <button type="submit">Buscar</button>
 
-        </div>
+        </form>
         <div id="insert" class="container-list">
             <!--  <div class="table-container">
                 <table class="table-student">
@@ -72,6 +83,7 @@
             </div>-->
 
 
+
             {% for alumno in todos_alumnos %}
             <div class="item-list">
                     <div class="item-list-name">
@@ -99,8 +111,6 @@
                 </div>
             </div>
             {% endfor %}
-            
-         
 
 
 

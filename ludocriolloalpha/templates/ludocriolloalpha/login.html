@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/iconludo.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/start.css' %}">
@@ -14,13 +15,8 @@
 
 <body>
     <div class="general-container">
-        <div class="item-alert">
-            <div id="alert">
-                <span class="closebtn" onclick="this.parentElement.style.transform='scale(.0)';">&times;</span>
-            Ingrese un usuario existente
-            </div>
-        </div>
-        <div id="item_login" class="item-login">
+     
+        <form method="POST" id="item_login" class="item-login">{% csrf_token %}
             <div class="item-login-icon">
                 <label for="txtuser" class="icon-user"></label>
             </div>
@@ -30,23 +26,23 @@
             <div class="item-input">
                 <div class="item-input-input">
                     <label for="txtuser" class="icon-user"></label>
-                    <input id="txtuser" type="text" required placeholder="Usuario">
+                    <input id="txtuser" name="txtuser" type="text" required placeholder="Usuario">
+                    <p id="error-login">{{ error }} </p>
                 </div>
 
                 <div class="item-input-input">
                     <label for="txtpass" class="icon-unlock-alt"></label>
-                    <input id="txtpass" type="password" required placeholder="***********">
+                    <input id="txtpass" name="txtpass" type="password" required placeholder="***********">
                 </div>
                 <div class="item-input-input">
-                    <input id="checkuser" type="checkbox">
-                    <label for="checkuser"> Recordar usuario</label>
+                    
+                    
                 </div>
-                <button onclick="redirect()"> Login</button>
-                <a href="#">¿Olvido su contraseña?</a>
-            </div>
+                <button type="submit" > Login</button>
+                <!-- <a href="#">¿Olvido su contraseña?</a> -->
+            </form>
         </div>
     </div>
-    <script src="{% static 'js/javalogin.js' %}"></script>
 </body>
 
 </html>

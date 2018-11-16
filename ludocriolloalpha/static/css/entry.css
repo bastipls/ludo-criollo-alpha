@@ -6,7 +6,7 @@
     font-family: calibri, arial;
 }
 
-form {
+.general-container form {
     display: flex;
     flex-direction: column;
     font-size: 16px;
@@ -141,7 +141,7 @@ button:hover {
 }
 @media screen and (min-width:480px) {
 
-    form {
+    .general-container form {
         width: 600px;
     }
 

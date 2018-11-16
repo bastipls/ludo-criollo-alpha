@@ -56,9 +56,9 @@
     width: 98%;
     background: rgba(255,255,255,.7);
     align-items: center;
-  
     margin-bottom: 2vh;
     color: rgba(0,0,0,.7);
+    position: relative;
 }
 .icon-user{
     font-size: 25px;
@@ -139,6 +139,21 @@
     border: 2px solid rgba(63,191,191);
     background: rgba(125,125,125);
 }
+.item-data a{
+    text-decoration: none;
+}
+.icon-trash{
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: red;
+    position: absolute;
+    right: 5px;
+    bottom: 20px;
+}
+.icon-trash:hover{
+    color: black;
+}
 /*Empieza alerta*/
 #alert {
     z-index: 100;
@@ -179,10 +194,17 @@
 .closebtn:hover {
     color: black;
 }
-
+/* aqui termina las alertas */
 @media screen and (min-width:1000px) {
     #alert {
         width: 30%;
+    }
+    .icon-trash{
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
+        right: 20px;
+        bottom: 20px;
     }
 }
 
