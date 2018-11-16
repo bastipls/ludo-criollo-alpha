@@ -63,7 +63,7 @@ def ingreso_profe(request):
             elif( imcAlumno < 34.99 ):
                 categoriaimcAlumno = "Obesidad" 
             else:
-                categoriaimcAlumno = "Obesidad morvida"
+                categoriaimcAlumno = "Obesidad mórbida"
 
             atributos = Alumno(nombres_alumno = nombresAlumno,
                             apellidos_alumno = apellidosAlumno,
@@ -136,7 +136,7 @@ def modificar_profe(request,pk):
                 elif( alumno.imc_alumno < 34.99 ):
                     alumno.categoria_imc_alumno = "Obesidad" 
                 else:
-                    alumno.categoria_imc_alumno = "Obesidad morvida"             
+                    alumno.categoria_imc_alumno = "Obesidad mórbida"             
                             
                 alumno = form.save(commit=False)
             
