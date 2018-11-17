@@ -100,6 +100,11 @@ button:hover {
     text-decoration-style: none;
     width: 30px;
     height: 30px;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 #name {
@@ -140,11 +145,11 @@ button:hover {
     border: .5px solid rgba(0, 0, 0, .4);
 }
 
-.item-list-data:nth-child(7) {
+.item-list-data:nth-child(9) {
     border-bottom-left-radius: 18px;
 }
 
-.item-list-data:nth-child(8) {
+.item-list-data:nth-child(10) {
     border-bottom-right-radius: 18px;
 }
 

@@ -25,7 +25,7 @@
                     <li>
                     <form  action="{% url 'logout' %}" method="post">
                             {% csrf_token %}
-                            <!-- <button class="item-link"  type="submit">Cerrar Sesion</button> -->
+                         
                             <input class="item-link" type="submit" value="Cerrar Sesion">
                     </form>
                     </li>
@@ -41,60 +41,28 @@
 
         </form>
         <div id="insert" class="container-list">
-            <!--  <div class="table-container">
-                <table class="table-student">
-                    <tr>
 
-                        <th>RUT:</th>
-                        <th>Nombre</th>
-                        <th>Curso</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Altura</th>
-                        <th>Peso</th>
-                        <th>Talla</th>
-                        <th>Cintura</th>
-                        <th>Cadera</th>
-                    </tr>
-                    <tr>
-                        <td>20057170-3</td>
-                        <td>Bastian</td>
-                        <td>2°A</td>
-                        <td>22-11-2018</td>
-                        <td>1.75</td>
-                        <td>70</td>
-                        <td>80</td>
-                        <td>90</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>20057170-3</td>
-                        <td>Bastian</td>
-                        <td>2°A</td>
-                        <td>22-11-2018</td>
-                        <td>1.75</td>
-                        <td>70</td>
-                        <td>80</td>
-                        <td>90</td>
-                        <td>30</td>
-                    </tr>
-             
-                
-                </table>
-            </div>-->
 
 
 
             {% for alumno in todos_alumnos %}
             <div class="item-list">
                     <div class="item-list-name">
-                            <a href="{% url 'detalle_alumno_profe' pk=alumno.pk %}" id="ref-info"> <span class="icon-info-circle"></span></a> 
-                              <p id="name">{{ alumno.nombres_alumno }}</p>
-                              <p>{{ alumno.apellidos_alumno }}</p>
+                            <a href="{% url 'detalle_alumno_profe' pk=alumno.pk %}" id="ref-info"> 
+                                <span class="icon-info-circle"></span>
+                                <p id="name">{{ alumno.nombres_alumno }}</p>
+                                <p>{{ alumno.apellidos_alumno }}</p>
+                            </a> 
+                              
                           </div>
                 <div class="item-list-info">
+                        <div class="item-list-data">Curso:</div>
+                        <div class="item-list-data">
+                            <p id="grade">{{ alumno.curso_alumno }} </p> 
+                        </div>
                     <div class="item-list-data">Edad(años):</div>
                     <div class="item-list-data">
-                        <p id="rut">{{ alumno.edad_alumno }} </p> 
+                        <p id="age">{{ alumno.edad_alumno }} </p> 
                     </div>
                     <div class="item-list-data">Altura(cm):</div>
                     <div class="item-list-data">
@@ -116,7 +84,7 @@
 
         </div>
     </div>
-    <!--     <script src="js/javalistsStudents.js"></script> -->
+
     <script src="{% static 'js/javamenu.js' %}"></script>
 </body>
 

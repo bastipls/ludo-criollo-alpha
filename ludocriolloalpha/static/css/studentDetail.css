@@ -55,6 +55,10 @@
     text-decoration-style: none;
     width: 30px;
     height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
 }
 
 #name{

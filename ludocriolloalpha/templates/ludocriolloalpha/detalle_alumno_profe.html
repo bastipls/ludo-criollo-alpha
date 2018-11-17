@@ -25,7 +25,7 @@
                             <li>
                             <form  action="{% url 'logout' %}" method="post">
                                     {% csrf_token %}
-                                    <!-- <button class="item-link"  type="submit">Cerrar Sesion</button> -->
+                              
                                     <input class="item-link" type="submit" value="Cerrar Sesion">
                             </form>
                             </li>
@@ -37,56 +37,19 @@
     <div class="general-container">
 
         <div id="insert" class="container-list">
-            <!--  <div class="table-container">
-                <table class="table-student">
-                    <tr>
-
-                        <th>RUT:</th>
-                        <th>Nombre</th>
-                        <th>Curso</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Altura</th>
-                        <th>Peso</th>
-                        <th>Talla</th>
-                        <th>Cintura</th>
-                        <th>Cadera</th>
-                    </tr>
-                    <tr>
-                        <td>20057170-3</td>
-                        <td>Bastian</td>
-                        <td>2°A</td>
-                        <td>22-11-2018</td>
-                        <td>1.75</td>
-                        <td>70</td>
-                        <td>80</td>
-                        <td>90</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>20057170-3</td>
-                        <td>Bastian</td>
-                        <td>2°A</td>
-                        <td>22-11-2018</td>
-                        <td>1.75</td>
-                        <td>70</td>
-                        <td>80</td>
-                        <td>90</td>
-                        <td>30</td>
-                    </tr>
-             
-                
-                </table>
-            </div>-->
 
             <h1 id="title-detail">Datos alumno:</h1>
             {% if alumno.nombres_alumno %}
             <div class="item-list">
                 <div class="item-list-name">
                     {% if user.is_authenticated %}
-                   <a href="{% url 'modificar_profe' pk=alumno.pk %}"> <span class="icon-pencil-square-o"></span></a>
+                   <a href="{% url 'modificar_profe' pk=alumno.pk %}">
+                        <span class="icon-pencil-square-o"></span>
+                        <p id="name">{{ alumno.nombres_alumno }} </p>
+                        <p> {{ alumno.apellidos_alumno }}</p>
+                    </a>
                     {% endif %}
-                    <p id="name">{{ alumno.nombres_alumno }} </p>
-                    <p> {{ alumno.apellidos_alumno }}</p>
+                    
                 </div>
                 <div class="item-list-info">
 

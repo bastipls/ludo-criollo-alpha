@@ -24,7 +24,7 @@
                         <li>
                         <form  action="{% url 'logout' %}" method="post">
                                 {% csrf_token %}
-                                <!-- <button class="item-link"  type="submit">Cerrar Sesion</button> -->
+                           
                                 <input class="item-link" type="submit" value="Cerrar Sesion">
                         </form>
                         </li>
@@ -66,7 +66,7 @@
 <div class="item-age-height">
 <div class="item-input">
     <div class="item-input-input">
-        <label for="txtage">Edad:</label>
+        <label for="txtage">Edad(años):</label>
         <input type="number" id="txtage" name="txtage" placeholder="Ingrese edad" required>
     </div>
 </div>
@@ -78,8 +78,8 @@
 </div>
 <div class="item-input">
     <div class="item-input-input">
-        <label for="txttalla">Ingrese talla(cm):</label>
-        <input type="number" id="txttalla" name="txttalla" placeholder="Ingrese talla" required>
+        <label for="txttalla">Ingrese altura(cm):</label>
+        <input type="number" id="txttalla" name="txttalla" placeholder="Ingrese altura" required>
     </div>
 </div>
 </div>

@@ -76,6 +76,13 @@ ul {
     background: rgba(0, 23, 28, .8);
 }
 
+.menu-container input{
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-bottom: none;
+}
+
 /*MEDIA DEL MENU DESPLEGABLE*/
 .menu-container ul ul {
     display: none;
@@ -87,12 +94,6 @@ ul {
 
 .menu-container ul ul .item-link:hover {
     background: rgba(0, 23, 28, .4);
-}
-.menu-container input{
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-bottom: none;
 }
 
 /*MEDIA DEL MENU NORMAL*/
@@ -143,3 +144,4 @@ ul {
         position: absolute;
     }
 }
+
