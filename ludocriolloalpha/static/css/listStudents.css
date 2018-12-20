@@ -140,9 +140,25 @@ button:hover {
     width: 50%;
     height: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border: .5px solid rgba(0, 0, 0, .4);
+    position: relative;
+  
+}
+.item-list-data p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cate-icon{
+    position: relative;
+    right: 0px;
+}
+.item-list-data img {
+    width: 35px;
+    margin-left: -10px;
+    
 }
 
 .item-list-data:nth-child(9) {
@@ -245,7 +261,7 @@ td:nth-child(2) {
     .item-list-button input{
         width: 50%;
     }
-
+ 
 }
 
 @media screen and (min-width:1250px) {
@@ -263,4 +279,5 @@ td:nth-child(2) {
 
 
     }
+ 
 }
